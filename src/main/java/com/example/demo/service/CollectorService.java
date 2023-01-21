@@ -65,7 +65,7 @@ public class CollectorService {
 
     public Page<Order> findPaginatedOrdersByStatus(int pageNo, int pageSize, String orderStatus) {
         Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
-        return this.orderRepository.findAllByStatus(orderStatus, pageable);
+        return this.orderRepository.findAllByStatus(Integer.valueOf(orderStatus), pageable);
     }
 
     public String findPaginatedCollectorOrders(int pageNo, Model model) {

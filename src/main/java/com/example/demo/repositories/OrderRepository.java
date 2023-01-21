@@ -23,5 +23,5 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
     Page<Order> findAllByUserId(Long userId, Pageable pageable);
 
     @Query(value="SELECT * FROM my_order WHERE status = ?1 ORDER BY date_created DESC", nativeQuery = true)
-    Page<Order> findAllByStatus(String status, Pageable pageable);
+    Page<Order> findAllByStatus(Integer status, Pageable pageable);
 }
